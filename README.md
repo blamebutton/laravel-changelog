@@ -5,11 +5,6 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/blamebutton/laravel-changelog/Check%20&%20fix%20styling?label=code%20style)](https://github.com/blamebutton/laravel-changelog/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/blamebutton/laravel-changelog.svg?style=flat-square)](https://packagist.org/packages/blamebutton/laravel-changelog)
 
-
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/blamebutton/laravel-changelog.svg?style=flat-square)](https://packagist.org/packages/blamebutton/laravel-changelog)
-[![Total Downloads](https://img.shields.io/packagist/dt/blamebutton/laravel-changelog.svg?style=flat-square)](https://packagist.org/packages/blamebutton/laravel-changelog)
-![GitHub Actions](https://github.com/blamebutton/laravel-changelog/actions/workflows/main.yml/badge.svg)
-
 This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
 
 ## Installation
@@ -23,7 +18,12 @@ composer require blamebutton/laravel-changelog
 ## Usage
 
 ```php
-// Usage description here
+use BlameButton\Laravel\Changelog\ChangelogFacade;
+
+/** 
+ * Get the raw content of your changelog file. 
+ */
+ChangelogFacade::raw();
 ```
 
 ### Testing
@@ -52,7 +52,3 @@ If you discover any security related issues, please email bram@ceulemans.dev ins
 ## License
 
 The Mozilla Public License 2.0. Please see [License File](LICENSE.md) for more information.
-
-## Laravel Package Boilerplate
-
-This package was generated using the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com).
