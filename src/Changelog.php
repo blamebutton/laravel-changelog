@@ -16,7 +16,7 @@ class Changelog
     {
         $file = $this->getFile();
 
-        if (!Storage::exists($file)) {
+        if (! Storage::exists($file)) {
             throw new ChangelogNotFoundException();
         }
 
