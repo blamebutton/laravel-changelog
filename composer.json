@@ -1,0 +1,63 @@
+{
+    "name": "blamebutton/laravel-changelog",
+    "description": "Retrieve your CHANGELOG.md from within Laravel",
+    "keywords": [
+        "blamebutton",
+        "laravel",
+        "changelog"
+    ],
+    "homepage": "https://github.com/blamebutton/laravel-changelog",
+    "license": "Mozilla Public License 2.0",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Bram Ceulemans",
+            "email": "bram@ceulemans.dev",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "illuminate/contracts": "^8.0"
+    },
+    "require-dev": {
+        "brianium/paratest": "^6.3",
+        "nunomaduro/collision": "^5.10",
+        "nunomaduro/larastan": "^1.0",
+        "orchestra/testbench": "^6.15",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan-deprecation-rules": "^1.0",
+        "phpstan/phpstan-phpunit": "^1.0",
+        "phpunit/phpunit": "^9.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "BlameButton\\Laravel\\Changelog\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "BlameButton\\Laravel\\Changelog\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "phpstan": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/testbench package:test --parallel --no-coverage",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ChangelogServiceProvider"
+            ],
+            "aliases": {
+                "Changelog": "ChangelogFacade"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
