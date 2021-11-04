@@ -7,7 +7,7 @@
         "changelog"
     ],
     "homepage": "https://github.com/blamebutton/laravel-changelog",
-    "license": "Mozilla Public License 2.0",
+    "license": "MPL-2.0",
     "type": "library",
     "authors": [
         {
