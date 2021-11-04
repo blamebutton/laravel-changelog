@@ -54,10 +54,10 @@
         },
         "laravel": {
             "providers": [
-                "ChangelogServiceProvider"
+                "\\BlameButton\\Laravel\\Changelog\\ChangelogServiceProvider"
             ],
             "aliases": {
-                "Changelog": "ChangelogFacade"
+                "Changelog": "\\BlameButton\\Laravel\\Changelog\\ChangelogFacade"
             }
         }
     },
