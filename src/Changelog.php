@@ -13,7 +13,7 @@ class Changelog
      *
      * @return string
      */
-    private function getFile(): string
+    public function path(): string
     {
         return config('changelog.file', base_path('CHANGELOG.md'));
     }
@@ -26,7 +26,7 @@ class Changelog
      */
     public function raw(): string
     {
-        $file = $this->getFile();
+        $file = $this->path();
 
         if (!file_exists($file)) {
             throw new ChangelogNotFoundException();
