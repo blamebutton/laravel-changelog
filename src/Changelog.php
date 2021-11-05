@@ -28,7 +28,7 @@ class Changelog
     {
         $file = $this->getFile();
 
-        if (!file_exists($file)) {
+        if (! file_exists($file)) {
             throw new ChangelogNotFoundException();
         }
 
