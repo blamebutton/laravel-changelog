@@ -3,7 +3,6 @@
 namespace BlameButton\Laravel\Changelog\Tests;
 
 use BlameButton\Laravel\Changelog\Changelog;
-use BlameButton\Laravel\Changelog\ChangelogFacade;
 use BlameButton\Laravel\Changelog\ChangelogServiceProvider;
 use Illuminate\Support\Facades\Storage;
 use Mockery\MockInterface;
@@ -32,9 +31,9 @@ class ChangelogTest extends TestCase
         Storage::put(base_path('CHANGELOG.md'), $expected);
 
         /** @var Changelog $changelog */
-        $changelog = $this->mock(Changelog::class, function(MockInterface $mock) {
-           $mock->shouldReceive('path')->andReturn(Storage::path(base_path('CHANGELOG.md')));
-           $mock->shouldReceive('raw')->passthru();
+        $changelog = $this->mock(Changelog::class, function (MockInterface $mock) {
+            $mock->shouldReceive('path')->andReturn(Storage::path(base_path('CHANGELOG.md')));
+            $mock->shouldReceive('raw')->passthru();
         });
 
         $content = $changelog->raw();
