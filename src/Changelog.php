@@ -9,7 +9,7 @@ class Changelog
 {
     private function getFile(): string
     {
-        return config('config.file', base_path('CHANGELOG.md'));
+        return config('changelog.file', base_path('CHANGELOG.md'));
     }
 
     public function raw(): string
