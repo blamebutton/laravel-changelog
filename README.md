@@ -24,6 +24,11 @@ use BlameButton\Laravel\Changelog\ChangelogFacade;
  * Get the raw content of your changelog file. 
  */
 ChangelogFacade::raw();
+
+/**
+ * Get the HTML version of your changelog file.
+ */
+ChangelogFacade::html();
 ```
 
 ### Testing
