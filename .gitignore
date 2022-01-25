@@ -16,3 +16,6 @@ testbench.yaml
 # ide
 /.idea
 /.vscode
+
+# mac
+.DS_Store
