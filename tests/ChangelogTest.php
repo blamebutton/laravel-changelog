@@ -21,10 +21,5 @@ it('handles raw file', function () {
         $mock->shouldReceive('raw')->passthru();
     });
 
-    $content = $changelog->raw();
-
-    expect($content)
-        ->not->toBeNull()
-        ->and($content)
-        ->toEqual($expected);
+    expect($changelog->raw())->toEqual($expected);
 });
