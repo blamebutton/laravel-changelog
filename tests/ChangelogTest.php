@@ -1,44 +1,30 @@
 <?php
 
-namespace BlameButton\Laravel\Changelog\Tests;
+declare(strict_types=1);
 
 use BlameButton\Laravel\Changelog\Changelog;
-use BlameButton\Laravel\Changelog\ChangelogServiceProvider;
 use Illuminate\Support\Facades\Storage;
 use Mockery\MockInterface;
-use Orchestra\Testbench\TestCase;
 
-class ChangelogTest extends TestCase
-{
-    protected function getPackageProviders($app): array
-    {
-        return [
-            ChangelogServiceProvider::class,
-        ];
-    }
+beforeEach(function () {
+    Storage::fake();
+});
 
-    protected function setUp(): void
-    {
-        parent::setUp();
+it('handles raw file', function () {
+    $expected = "Changelog\n\nv1.0.0";
 
-        Storage::fake();
-    }
+    Storage::put(base_path('CHANGELOG.md'), $expected);
 
-    public function testRaw(): void
-    {
-        $expected = "Changelog\n\nv1.0.0";
+    /** @var Changelog&MockInterface $changelog */
+    $changelog = $this->mock(Changelog::class, function (Changelog&MockInterface $mock) {
+        $mock->shouldReceive('path')->andReturn(Storage::path(base_path('CHANGELOG.md')));
+        $mock->shouldReceive('raw')->passthru();
+    });
 
-        Storage::put(base_path('CHANGELOG.md'), $expected);
+    $content = $changelog->raw();
 
-        /** @var Changelog $changelog */
-        $changelog = $this->mock(Changelog::class, function (MockInterface $mock) {
-            $mock->shouldReceive('path')->andReturn(Storage::path(base_path('CHANGELOG.md')));
-            $mock->shouldReceive('raw')->passthru();
-        });
-
-        $content = $changelog->raw();
-
-        self::assertNotNull($content);
-        self::assertEquals($expected, $content);
-    }
-}
+    expect($content)
+        ->not->toBeNull()
+        ->and($content)
+        ->toEqual($expected);
+});

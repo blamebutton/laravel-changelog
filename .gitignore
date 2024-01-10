@@ -1,21 +1,11 @@
-/build
-/vendor
-/node_modules
-
-.php_cs
-.php_cs.cache
-.php-cs-fixer.cache
-.phpunit.result.cache
+.idea
+.phpunit.cache
+build
 composer.lock
-
-# user specific
-phpunit.xml
+coverage
+docs
+phpunit.xml.dist
 phpstan.neon
 testbench.yaml
-
-# ide
-/.idea
-/.vscode
-
-# mac
-.DS_Store
+vendor
+node_modules

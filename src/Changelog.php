@@ -10,8 +10,6 @@ class Changelog
 {
     /**
      * Get the location of the changelog file.
-     *
-     * @return string
      */
     public function path(): string
     {
@@ -21,7 +19,6 @@ class Changelog
     /**
      * Get the raw content of the changelog.
      *
-     * @return string
      * @throws ChangelogNotFoundException when the changelog file can not be found.
      */
     public function raw(): string
@@ -37,8 +34,6 @@ class Changelog
 
     /**
      * Generate a HTML version of your changelog.
-     *
-     * @return HtmlString
      */
     public function html(): HtmlString
     {
