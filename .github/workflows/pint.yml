@@ -5,7 +5,7 @@ on:
       - '**.php'
 
 jobs:
-  php-cs-fixer:
+  pint:
     runs-on: ubuntu-latest
 
     steps:
