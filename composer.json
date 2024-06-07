@@ -24,7 +24,7 @@
         "brianium/paratest": "^7",
         "larastan/larastan": "^2.0",
         "laravel/pint": "^1.13",
-        "nunomaduro/collision": "^7",
+        "nunomaduro/collision": "^7 | ^8.1",
         "orchestra/testbench": "^8.0",
         "pestphp/pest": "^2.30",
         "phpstan/extension-installer": "^1.1",
