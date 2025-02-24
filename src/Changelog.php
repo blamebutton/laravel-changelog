@@ -13,7 +13,7 @@ class Changelog
      */
     public function path(): string
     {
-        return config('changelog.file', base_path('CHANGELOG.md'));
+        return config()->string('changelog.file', base_path('CHANGELOG.md'));
     }
 
     /**
@@ -29,7 +29,12 @@ class Changelog
             throw new ChangelogNotFoundException();
         }
 
-        return file_get_contents($file);
+        $contents = file_get_contents($file);
+        if ($contents === false) {
+            throw new ChangelogNotFoundException();
+        }
+
+        return $contents;
     }
 
     /**

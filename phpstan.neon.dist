@@ -1,13 +1,15 @@
 includes:
+    - vendor/larastan/larastan/extension.neon
+    - vendor/phpstan/phpstan-deprecation-rules/rules.neon
+    - vendor/phpstan/phpstan-phpunit/extension.neon
+    - vendor/phpstan/phpstan-phpunit/rules.neon
     - phpstan-baseline.neon
 
 parameters:
-    level: 4
+    level: max
     paths:
-        - src
         - config
-        #- database
-        - tests
+        - src
     tmpDir: build/phpstan
     checkOctaneCompatibility: true
     checkModelProperties: true
