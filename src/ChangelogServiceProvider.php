@@ -28,7 +28,7 @@ class ChangelogServiceProvider extends ServiceProvider
 
         // Register the main class to use with the facade
         $this->app->singleton('changelog', function () {
-            return new Changelog();
+            return new Changelog;
         });
     }
 }

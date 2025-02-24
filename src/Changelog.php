@@ -26,12 +26,12 @@ class Changelog
         $file = $this->path();
 
         if (! file_exists($file)) {
-            throw new ChangelogNotFoundException();
+            throw new ChangelogNotFoundException;
         }
 
         $contents = file_get_contents($file);
         if ($contents === false) {
-            throw new ChangelogNotFoundException();
+            throw new ChangelogNotFoundException;
         }
 
         return $contents;
